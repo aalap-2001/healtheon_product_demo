@@ -14,7 +14,7 @@ const firebaseConfig = {
 };
 
 const PAGE_ID = "healtheon-demo-voiceover-v2"; // change per page/version so feedback stays separate
-const db = getFirestore(initializeApp(firebaseConfig));
+const db = getFirestore(initializeApp(firebaseConfig), "healtheondemo");
 const col = collection(db, "pages", PAGE_ID, "comments");
 
 // ---------- styles (reuses the page's own colour variables, with fallbacks) ----------
