@@ -65,6 +65,7 @@ const $ = id => document.getElementById(id);
 const nameBox = $("fb-name");
 nameBox.value = (() => { try { return localStorage.getItem("fb-name") || ""; } catch { return ""; } })();
 $("fb-btn").onclick = () => $("fb-panel").classList.toggle("open");
+$("fb-panel").addEventListener("keydown", e => e.stopPropagation()); // keep page shortcuts (e.g. Space = pause) out of the form
 
 let target = null; // {x, y, label}
 const describe = el => (el.innerText || el.getAttribute("aria-label") || el.tagName).trim().replace(/\s+/g, " ").slice(0, 60);
